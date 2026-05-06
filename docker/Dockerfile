@@ -22,7 +22,7 @@ ADD https://github.com/$SOURCE_REPO/go-crond/releases/download/$GOCROND_VERSION/
 
 USER root
 
-RUN curl https://dl.min.io/client/mc/release/linux-amd64/mc -o /usr/bin/mc
+RUN curl -fL https://dl.min.io/client/mc/release/linux-amd64/mc -o /usr/bin/mc
 RUN chmod +x /usr/bin/mc
 RUN chmod +x /usr/bin/go-crond
 # ========================================================================================================
