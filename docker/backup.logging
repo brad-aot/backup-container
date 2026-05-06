@@ -130,7 +130,7 @@ function postMsgToWebhook(){
 
     escEnvironmentValue=$(printf '%s' "${environmentValue}" | sed ':a;N;$!ba;s/\n/\\n/g; s/\\/\\\\/g; s/"/\\"/g')
     escProjectValue=$(printf '%s' "${projectValue}" | sed ':a;N;$!ba;s/\n/\\n/g; s/\\/\\\\/g; s/"/\\"/g')
-    escMessageValue=$(printf '%s' "${messageValue}" | sed ':a;N;$!ba;s/\n/\\n/g; s/\\/\\\\/g; s/"/\\"/g')
+    escMessageValue=$(printf '%s' "${messageValue}" | sed ':a;N;$!ba;s/\n/<br>/g; s/\\/\\\\/g; s/"/\\"/g')
     escStatusLabel=$(printf '%s' "${statusLabel}" | sed 's/\\/\\\\/g; s/"/\\"/g')
     escStatusIcon=$(printf '%s' "${statusIcon}" | sed 's/\\/\\\\/g; s/"/\\"/g')
     escCardTitle=$(printf '%s' "${cardTitle}" | sed 's/\\/\\\\/g; s/"/\\"/g')
