@@ -89,9 +89,14 @@ function postMsgToWebhook(){
     statusCode=${3}
     message=$(echo -e "${4}")
     local statusPrefix="[INFO]"
-    local statusLabel="SUCCESS"
-    local statusIcon="✅"
-    local cardTitle="🟢 Database Backup - SUCCESS"
+    local statusLabel="INFO"
+    local statusIcon="🔵"
+    local cardTitle="🔵 Database Backup - INFO"
+    if [[ "${message}" == *"Successfully backed up "* ]]; then
+      statusLabel="SUCCESS"
+      statusIcon="✅"
+      cardTitle="🟢 Database Backup - SUCCESS"
+    fi
     if [ "${statusCode}" == "WARN" ]; then
       statusPrefix="[WARN]"
       statusLabel="WARNING"
